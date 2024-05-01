@@ -36,6 +36,10 @@ function os_is_redhat {
   grep -q "Red Hat Enterprise Linux Server release $version" /etc/*release
 }
 
+function os_is_redhat_new {
+  local -r version="$1"
+  grep -q "Red Hat Enterprise Linux release $version" /etc/*release
+}
 
 # Returns true (0) if this is an OS X server or false (1) otherwise.
 function os_is_darwin {
